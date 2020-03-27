@@ -33,10 +33,12 @@ def array_product(array)
   product
 end
 
-# puts array_product(arr2)
+# puts array_product(arr1)
 
 
-# Write two sum, O(n2)
+
+# Write two_sum_n2
+# The solution should be in O(n2) time
 
 def two_sum_n2(array, target)
 
@@ -62,8 +64,15 @@ def two_sum_n2(array, target)
   return nil
 end
 
-
 # p two_sum_n2(arr1, 4)
+# [0, 2]
+# p two_sum_n2(arr1, 6)
+# nil
+
+
+
+# Write two_sum
+# Solution should be constant time O(n)
 
 def two_sum(array, target)
   diff = {}
@@ -83,5 +92,37 @@ def two_sum(array, target)
   return nil
 end
 
-p two_sum(arr1, 4)
+# p two_sum(arr1, 4)
+# [0, 2]
+# p two_sum(arr1, 6)
+# nil
 
+
+
+arr2 = [0, 1, 0, 3, 12]
+
+def move_zeros(array)
+
+  last_non_zero = 0
+
+  i = 0
+  while i < array.length
+    
+    if array[i] != 0
+      array[last_non_zero] = array[i]
+      last_non_zero += 1
+    end
+
+    i += 1
+  end
+
+  while last_non_zero < array.length
+    array[last_non_zero] = 0
+    last_non_zero += 1
+  end
+
+  array
+end
+
+# p move_zeros(arr2)
+# [1, 3, 12, 0, 0]
