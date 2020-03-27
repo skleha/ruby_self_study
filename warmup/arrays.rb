@@ -38,7 +38,7 @@ end
 
 # Write two sum, O(n2)
 
-def two_sum(array, target)
+def two_sum_n2(array, target)
 
   i = 0
   
@@ -63,4 +63,25 @@ def two_sum(array, target)
 end
 
 
+# p two_sum_n2(arr1, 4)
+
+def two_sum(array, target)
+  diff = {}
+  
+  array.each_with_index do |num, i|
+    difference = target - num
+
+    if diff.has_key?(difference)
+      idx = diff[difference]
+      return [idx, i]
+    else
+      diff[num] = i
+    end
+
+  end
+
+  return nil
+end
+
 p two_sum(arr1, 4)
+
