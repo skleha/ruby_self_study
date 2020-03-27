@@ -15,6 +15,21 @@ def array_sum(array)
   sum
 end
 
-puts array_sum(arr1)
+# puts array_sum(arr1)
 
- 
+
+# Write a function to multiply the numbers of an array
+
+def array_product(array)
+  product = 1
+
+  array.each do |num|
+    product *= num
+    puts product
+  end
+
+
+  product
+end
+
+# puts array_product(arr2)
