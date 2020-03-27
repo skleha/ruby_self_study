@@ -98,8 +98,43 @@ end
 # nil
 
 
+arr2 = [1, 2, 5, 3, 0]
 
-arr2 = [0, 1, 0, 3, 12]
+def find_pivot(array)
+  forward = []
+  forwardSum = 0
+
+  for num in array
+    forwardSum += num
+    forward.push(forwardSum)
+  end
+
+  i = array.length - 1
+  backward = Array.new(array.length)
+  backwardSum = 0
+  while i >= 0
+    backwardSum += array[i]
+    backward[i] = backwardSum
+    i -= 1
+  end
+
+  j = 0
+  while j < array.length
+    if forward[j] == backward[j]
+      return j
+    end
+    
+    j += 1
+  end
+
+  return nil
+end
+
+# p find_pivot(arr2)
+
+
+
+arr3 = [0, 1, 0, 3, 12]
 
 def move_zeros(array)
 
@@ -124,5 +159,5 @@ def move_zeros(array)
   array
 end
 
-# p move_zeros(arr2)
+# p move_zeros(arr3)
 # [1, 3, 12, 0, 0]
